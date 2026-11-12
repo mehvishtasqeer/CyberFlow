@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>CyberFlow | DAA Unit V</title><link rel="stylesheet" href="style.css"></head>
+<body>
+<header><a class="brand" href="#">⌁ Cyber<span>Flow</span></a><small>DAA · UNIT V</small></header>
+<main>
+<section class="hero"><div class="eyebrow">● ALGORITHM APPLICATION DASHBOARD</div><h1>Cybersecurity &amp; <em>Internet Data Flow</em></h1><p>Explore how string matching and network flow algorithms support intrusion detection, DNA sequence search, bandwidth optimization, and streaming infrastructure.</p><div class="stats"><b>04 <small>Case studies</small></b><b>06 <small>Algorithms / methods</small></b><b>LIVE <small>Interactive demos</small></b></div></section>
+<section><div class="sectionhead"><div><div class="eyebrow">SELECT A MODULE</div><h2>Algorithm dashboard</h2></div><small>Choose a case study to explore</small></div>
+<div class="cards">
+<button class="module active" data-id="intrusion"><i>⌕</i><label>01 / STRING MATCHING</label><b>Intrusion signature matching</b><small>KMP &amp; Rabin-Karp</small></button>
+<button class="module" data-id="dna"><i class="cyan">⌬</i><label>02 / STRING MATCHING</label><b>DNA sequence search</b><small>Naive pattern matching</small></button>
+<button class="module" data-id="flow"><i class="orange">⇄</i><label>03 / FLOW NETWORKS</label><b>Bandwidth optimization</b><small>Edmonds-Karp · Max Flow</small></button>
+<button class="module" data-id="allocation"><i class="green">◈</i><label>04 / FLOW NETWORKS</label><b>Streaming load allocation</b><small>Bipartite network flow</small></button>
+</div></section>
+<section class="workspace"><div class="sectionhead"><div><div class="eyebrow">INTERACTIVE WORKSPACE</div><h2 id="title">Intrusion signature matching</h2><p id="desc">Search sample network logs for a known signature using two pattern-matching algorithms.</p></div><small class="ready">● READY TO RUN</small></div>
+<div class="panel active" id="intrusion"><div class="cols"><div class="form"><label>Sample network log / text</label><textarea id="log" rows="3">User login successful; ALERT: suspicious_request detected</textarea><label>Signature / pattern</label><input id="signature" value="suspicious_request"><button id="runString">Run KMP &amp; Rabin-Karp →</button></div><aside><i>⌕</i><h3>Why it matters</h3><p>Intrusion Detection Systems scan network data for known patterns. KMP avoids repeated comparisons; Rabin-Karp uses rolling hashes to find candidate matches.</p><hr><small>KMP</small><b>O(n + m)</b><small>Rabin-Karp average</small><b>O(n + m)</b></aside></div><div class="result" id="stringResult">OUTPUT CONSOLE<br>Run the demo to see matching positions.</div></div>
+<div class="panel" id="dna"><div class="cols"><div class="form"><label>DNA sequence (A, T, G, C)</label><textarea id="dnaText" rows="2">ATGCGATATGCA</textarea><label>DNA pattern</label><input id="dnaPattern" value="ATG"><button id="runDna">Search DNA sequence →</button></div><aside><i class="cyan">⌬</i><h3>Why it matters</h3><p>Naive matching checks the pattern at every possible position. It is simple and useful for small-scale sequence searches.</p><hr><small>Time complexity</small><b>O(n × m)</b><small>Space</small><b>O(1)</b></aside></div><div class="result" id="dnaResult">OUTPUT CONSOLE<br>Enter a DNA sequence and pattern.</div></div>
+<div class="panel" id="flow"><div class="cols"><div class="form"><label>Directed connections <small>one edge per line: from,to,capacity</small></label><textarea id="edges" rows="7">0,1,16
+0,2,13
+1,2,10
+2,1,4
+1,3,12
+3,2,9
+2,4,14
+4,3,7
+3,5,20</textarea><div class="twins"><div><label>Source node</label><input id="source" type="number" value="0"></div><div><label>Sink node</label><input id="sink" type="number" value="5"></div></div><button id="runFlow">Calculate maximum flow →</button></div><aside><i class="orange">⇄</i><h3>Why it matters</h3><p>A flow network models data moving through links with limited capacities. Edmonds-Karp uses BFS to find augmenting paths.</p><hr><small>Edmonds-Karp</small><b>O(V × E²)</b><small>Method</small><b>Ford-Fulkerson + BFS</b></aside></div><div class="result" id="flowResult">OUTPUT CONSOLE<br>Default sample network returns 23.</div></div>
+<div class="panel" id="allocation"><div class="cols"><div class="form"><label>Region demands <small>comma-separated load units</small></label><input id="demands" value="7,5"><label>Server capacities <small>comma-separated load units</small></label><input id="capacities" value="6,8"><label>Compatibility matrix <small>one row per region; 1 = allowed, 0 = not allowed</small></label><textarea id="compat" rows="2">1,1
+1,1</textarea><button id="runAllocation">Optimize server allocation →</button></div><aside><i class="green">◈</i><h3>Why it matters</h3><p>Streaming platforms distribute viewer demand across servers. This model respects region demand, server capacity, and allowed connections.</p><hr><small>Technique</small><b>Maximum flow</b><small>Goal</small><b>Maximize served load</b></aside></div><div class="result" id="allocationResult">OUTPUT CONSOLE<br>Adjust demand, capacity, and compatibility, then optimize.</div></div>
+</section>
+<div class="note"><b>✦ About this project</b><p>A DAA Unit V educational demonstration. Results are computed locally in your browser using sample or user-entered data; it does not inspect real network traffic or connect to streaming services.</p></div>
+<footer>CYBERFLOW · DAA UNIT V CASE STUDY · STRING MATCHING &amp; FLOW NETWORKS</footer>
+</main><script src="script.js"></script></body></html>
